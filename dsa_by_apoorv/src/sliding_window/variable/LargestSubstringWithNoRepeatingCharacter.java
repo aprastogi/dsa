@@ -1,4 +1,4 @@
-package variable;
+package sliding_window.variable;
 
 /*
 https://www.geeksforgeeks.org/length-of-the-longest-substring-without-repeating-characters/

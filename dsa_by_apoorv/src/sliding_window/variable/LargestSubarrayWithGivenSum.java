@@ -1,4 +1,4 @@
-package variable;
+package sliding_window.variable;
 
 import java.util.Arrays;
 

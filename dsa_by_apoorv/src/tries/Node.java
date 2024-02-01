@@ -1,4 +1,4 @@
-package trie;
+package tries;
 
 public class Node {
     Node[] links = new Node[26];

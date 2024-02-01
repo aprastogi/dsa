@@ -1,4 +1,4 @@
-package variable;
+package sliding_window.variable;
 
 /*
 https://www.geeksforgeeks.org/find-the-smallest-window-in-a-string-containing-all-characters-of-another-string/

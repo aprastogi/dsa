@@ -1,4 +1,4 @@
-package buy_sell_stock;
+package dynamic_programming.buy_sell_stock;
 
 // https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
 

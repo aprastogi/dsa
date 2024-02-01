@@ -1,4 +1,4 @@
-package fixed;
+package sliding_window.fixed;
 
 public class MaximumSumOfAllSubarrayOfSizeK {
     public static void main(String[] args) {

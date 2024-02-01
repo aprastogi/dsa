@@ -1,4 +1,4 @@
-package fixed;
+package sliding_window.fixed;
 
 import java.util.HashMap;
 import java.util.Map;
