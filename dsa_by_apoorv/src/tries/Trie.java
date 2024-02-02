@@ -11,10 +11,10 @@ public class Trie {
     void insert(String word){
         Node node = root;
         for(int i=0;i<word.length();i++){
-            if(!node.containsKey(word.charAt(i))){
-                node.put(word.charAt(i), new Node());
+            if(!node.map.containsKey(word.charAt(i))){
+                node.map.put(word.charAt(i), new Node());
             }
-            node = node.get(word.charAt(i));
+            node = node.map.get(word.charAt(i));
         }
         node.setEnd();
     }
@@ -22,10 +22,10 @@ public class Trie {
     boolean search(String word){
         Node node = root;
         for(int i=0;i<word.length();i++){
-            if(!node.containsKey(word.charAt(i))){
+            if(!node.map.containsKey(word.charAt(i))){
                 return false;
             }
-            node = node.get(word.charAt(i));
+            node = node.map.get(word.charAt(i));
         }
         return node.getEnd();
     }
@@ -33,10 +33,10 @@ public class Trie {
     boolean searchWithPrefix(String word){
         Node node = root;
         for(int i=0;i<word.length();i++){
-            if(!node.containsKey(word.charAt(i))){
+            if(!node.map.containsKey(word.charAt(i))){
                 return false;
             }
-            node = node.get(word.charAt(i));
+            node = node.map.get(word.charAt(i));
         }
         return true;
     }

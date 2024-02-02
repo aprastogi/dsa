@@ -11,10 +11,10 @@ public class CountTotalWordsAndPrefixes {
     void insert(String word){
         Node node = root;
         for(int i=0;i<word.length();i++){
-            if(!node.containsKey(word.charAt(i))){
-                node.put(word.charAt(i), new Node());
+            if(!node.map.containsKey(word.charAt(i))){
+                node.map.put(word.charAt(i), new Node());
             }
-            node = node.get(word.charAt(i));
+            node = node.map.get(word.charAt(i));
             node.increasePrefixCount();
         }
         node.increaseWordCount();
@@ -23,10 +23,10 @@ public class CountTotalWordsAndPrefixes {
     int countWord(String word){
         Node node = root;
         for(int i=0;i<word.length();i++){
-            if(!node.containsKey(word.charAt(i))){
+            if(!node.map.containsKey(word.charAt(i))){
                 return 0;
             }
-            node = node.get(word.charAt(i));
+            node = node.map.get(word.charAt(i));
         }
         return node.getWordCount();
     }
@@ -34,10 +34,10 @@ public class CountTotalWordsAndPrefixes {
     private int countPrefix(String word) {
         Node node = root;
         for(int i=0;i<word.length();i++){
-            if(!node.containsKey(word.charAt(i))){
+            if(!node.map.containsKey(word.charAt(i))){
                 return 0;
             }
-            node = node.get(word.charAt(i));
+            node = node.map.get(word.charAt(i));
         }
         return node.getPrefixCount();
     }
@@ -45,10 +45,10 @@ public class CountTotalWordsAndPrefixes {
     private void erase(String word){
         Node node = root;
         for(int i=0;i<word.length();i++){
-            if(!node.containsKey(word.charAt(i))){
+            if(!node.map.containsKey(word.charAt(i))){
                 return;
             }
-            node = node.get(word.charAt(i));
+            node = node.map.get(word.charAt(i));
             node.decreasePrefixCount();
         }
         node.decreaseWordCount();

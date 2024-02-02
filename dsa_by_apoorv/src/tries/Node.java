@@ -1,22 +1,13 @@
 package tries;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Node {
-    Node[] links = new Node[26];
+    Map<Character,Node> map = new HashMap<>();
     boolean flag = false;
     int wordCount = 0;
     int prefixCount = 0;
-
-    void put(char ch, Node node){
-        links[ch - 'a'] = node;
-    }
-
-    boolean containsKey(char ch){
-        return links[ch - 'a'] != null;
-    }
-
-    Node get(char ch){
-        return links[ch - 'a'];
-    }
 
     void setEnd(){
         flag = true;
