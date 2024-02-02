@@ -3,25 +3,8 @@ package heap;
 import java.util.*;
 
 public class FrequencySort {
-    static class Pair{
-        int frequency;
-        int element;
 
-        public Pair(int frequency, int element){
-            this.frequency = frequency;
-            this.element = element;
-        }
-
-        public int getFrequency(){
-            return frequency;
-        }
-
-        public int getElement(){
-            return element;
-        }
-    }
-
-    public static List<Integer> topKFrequentNumbers(int [] arr, int k){
+    public static List<Integer> sortArray(int [] arr){
         List<Integer> answer = new ArrayList<>();
         PriorityQueue<TopKFrequentNumbers.Pair> pq = new PriorityQueue<>(Comparator.comparingInt(TopKFrequentNumbers.Pair::getFrequency).reversed());
         Map<Integer,Integer> map = new HashMap<>();
@@ -40,7 +23,6 @@ public class FrequencySort {
 
     public static void main(String[] args) {
         int [] arr = {1,1,1,3,2,2,4};
-        int k = 2;
-        System.out.println("Array after sorting based on frequency is : " + topKFrequentNumbers(arr, k));
+        System.out.println("Array after sorting based on frequency is : " + sortArray(arr));
     }
 }
