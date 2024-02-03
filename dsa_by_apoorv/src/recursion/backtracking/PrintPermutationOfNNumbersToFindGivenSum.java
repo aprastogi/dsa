@@ -27,10 +27,27 @@ public class PrintPermutationOfNNumbersToFindGivenSum {
         }
     }
 
+    // Solved without backtracking
+    public static void permutationOfNumbers2(int n, int sum, String output, List<String> result){
+        if(n == 0 && sum == 0){
+            // found one solution
+            result.add(output);
+        }
+        if(n == 0 || sum == 0){
+            return;
+        }
+        for(int i=1;i<=sum;i++){
+            permutationOfNumbers2(n-1, sum - i, output + i, result);
+        }
+    }
+
     public static void main(String[] args) {
         int n = 2;
         int sum = 4;
         List<List<Integer>> answer =  permutationOfNumbers(n, sum);
         answer.forEach(System.out::println);
+        List<String> result = new ArrayList<>();
+        permutationOfNumbers2(n, sum, "", result);
+        System.out.println(result);
     }
 }
